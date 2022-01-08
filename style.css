@@ -70,6 +70,7 @@
   /* flex-basis: wrap; */
   flex-wrap: wrap;
   justify-content: center;
+  margin-top: 2rem !important;
 }
 
 /* position: absolute;
@@ -83,7 +84,8 @@
   left: 50%;
   transform: translate(-50%, -50%);
   font-family: 'Ubuntu', sans-serif;
-  color: azure;
+  color: whitesmoke;
+  font-weight: bolder;
 }
 
 #homeh {
@@ -182,4 +184,48 @@
 .home_del{
 
   display: none;
+}
+
+
+#contests-head{
+  
+  
+  text-align: center;
+  font-family: 'Ubuntu';
+  font-weight: bolder;
+  
+  
+
+
+
+}
+
+
+.progress{
+
+  display: flex;
+  height: 1rem;
+  overflow: hidden;
+  font-size: .75rem;
+  background-color: #e9ecef;
+  border-radius: .25rem;
+  width: 9%;
+  margin: auto;
+
+}
+
+.imagine{
+
+  width: 65%;
+    /* height: 80%; */
+    margin: auto;
+    border-block: inherit;
+    border-radius: 10px;
+
+
+
+}
+
+.reistor{
+  margin-bottom: 5rem;
 }
