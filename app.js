@@ -117,8 +117,8 @@ let name = document.querySelector(".my_name");
 let email = document.querySelector(".my_email");
 let phone = document.querySelector(".my_phone");
 let school = document.querySelector(".my_school");
-let eventname = document.querySelector(".my_eventname");
-let date = document.querySelector(".my_date");
+let eventname = document.querySelector("#my_eventname");
+let date = document.querySelector(".my_eventname");
 
 function fetchingdata(itm) {
   itm.preventDefault();
@@ -192,7 +192,7 @@ const institute_name = document.querySelector("#country");
 const Email = document.querySelector("#Email");
 const phone_no = document.querySelector("#Number");
 const Eventname = document.querySelector("#Eventname");
-const Eventdate = document.querySelector("#date");
+const Eventdate = document.querySelector("#mydate");
 const institute_image = document.querySelector("#image");
 const submit_2 = document.querySelector("#submit-2");
 
@@ -303,8 +303,8 @@ function check_creating_contest_credentials() {
   ) {
     console.log("all set");
   } else {
-    throwerror();
-    setbacktodefault();
+    // throwerror();
+    // setbacktodefault();
   }
 }
 
