@@ -204,10 +204,8 @@ submit_2.addEventListener("click", function (object) {
   check_creating_contest_credentials();
   check_email();
 
-
   adduserdetails();
   creating_contest();
-
 
   setbacktodefault();
 });
@@ -308,4 +306,69 @@ function check_creating_contest_credentials() {
     throwerror();
     setbacktodefault();
   }
+}
+
+// ######################################## working on search bar----------->>>>#########################
+
+const search = document.querySelector(".btn");
+const search_bar = document.querySelector(".form-control");
+const home_page = document.querySelector(".home");
+
+search.addEventListener("click", (itm) => {
+  itm.preventDefault();
+  
+  if (search_bar.value) {
+    search_bar1 = search_bar.value;
+
+    console.log(search_bar1);
+
+    // filtering data--->
+    filtering_data(search_bar1);
+
+    // showing in contest section ---> challengesdata(doc)
+  } else {
+    alert("cannot search for empty value!");
+  }
+});
+
+function filtering_data(search_bar1) {
+  db.collection("fit1")
+    .get()
+    .then((snapshot) => {
+      snapshot.docs.forEach((doc) => {
+        const name = doc.data().name;
+        const desc = doc.data().desc;
+        const date = doc.data().date;
+
+        // console.log(doc.id);
+        // console.log(doc.data().img);
+        if (
+          name === search_bar1 ||
+          desc === search_bar1 ||
+          date === search_bar1
+        ) {
+          clear_upcoming();
+          challengesdata(doc);
+          clear_search_bar();
+
+          // if data actually exits--->challengesdata(doc);
+          clear_home();
+        }
+      });
+    });
+}
+
+function clear_upcoming() {
+  upcoming.innerHTML = "";
+}
+
+function clear_search_bar() {
+  search_bar.value = "";
+}
+
+//delete home at search---->
+function clear_home() {
+
+  home_page.classList.add("home_del");
+  
 }
